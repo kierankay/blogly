@@ -5,7 +5,7 @@ class CommentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: ''
+      text: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,8 +17,12 @@ class CommentList extends React.Component {
     })
   }
 
-  handleSubmit(evt) {
-    // add a comment to redux
+  async handleSubmit(evt) {
+    evt.preventDefault();
+    await this.props.addCommentToAPI(this.state.text, this.props.postId);
+    this.setState({
+      text: ''
+    })
   }
 
   render() {
@@ -26,14 +30,14 @@ class CommentList extends React.Component {
       <div>
         <h2>Comments</h2>
         <div>
-          {/* {this.props.comments.map(c => <Comment comment={c}/>)} */}
+    {this.props.posts[this.props.postId].comments.map(c => <Comment id={c.id} text={c.text} deleteComment={() => this.props.deleteCommentFromAPI(c.id, this.props.postId)} />)}
         </div>
         <div>
           <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-            <div class="form-group">
-              <label for="comment"></label>
+            <div className="form-group">
+              <label htmlFor="text"></label>
               <input type="text"
-                class="form-control" name="comment" id="comment" aria-describedby="helpId" placeholder="" value={this.state.comment} />
+                className="form-control" name="text" id="text" aria-describedby="helpId" placeholder="" value={this.state.text} />
             </div>
             <button type="submit" className="btn btn-primary">Add</button>
           </form>

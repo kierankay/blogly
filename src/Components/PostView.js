@@ -1,6 +1,6 @@
 import React from 'react';
 import PostForm from '../containers/PostFormContainer';
-import CommentList from '../CommentList';
+import CommentListContainer from '../containers/CommentListContainer';
 
 class PostView extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class PostView extends React.Component {
           <h2>{this.props.posts[id].description}</h2>
           <p>{this.props.posts[id].body}</p>
         </div>
-        <CommentList />
+        <CommentListContainer postId={id} />
         </div>
         }
       </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { gotTitles, gotPost, editPost, addPost, deletePost } from "./actions";
+import { gotTitles, gotPost, editPost, addPost, deletePost, addComment, deleteComment , updateVotes} from "./actions";
 
 const BASE_URL = 'http://localhost:5000'
 
@@ -38,4 +38,25 @@ function deletePostFromAPI(id) {
   }
 }
 
-export { deletePostFromAPI, getTitlesFromAPI, getPostFromAPI, updatePostToAPI, addPostToAPI }
+function addCommentToAPI(text, postId) {
+  return async function(dispatch) {
+    let response = await axios.post(`${BASE_URL}/api/posts/${postId}/comments`, {text, post_id: postId});
+    dispatch(addComment(postId, response.data))
+  }
+}
+
+function deleteCommentFromAPI(commentId, postId) {
+  return async function(dispatch) {
+    await axios.delete(`${BASE_URL}/api/posts/${postId}/comments/${commentId}`);
+    dispatch(deleteComment(commentId, postId))
+  }
+}
+
+function changeVotes(postId, direction) {
+  return async function(dispatch) {
+    let response = await axios.post(`/api/posts/${postId}/vote/${direction}`);
+    dispatch(updateVotes(postId, response));
+  }
+}
+
+export { deletePostFromAPI, getTitlesFromAPI, addCommentToAPI, deleteCommentFromAPI, getPostFromAPI, updatePostToAPI, addPostToAPI, changeVotes }

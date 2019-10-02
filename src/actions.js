@@ -36,17 +36,17 @@ function editPost(post) {
   }
 }
 
-function addComment(comment) {
+function addComment(postId, comment) {
   return {
     type: ADD_COMMENT,
-    payload: comment
+    payload: {postId, comment}
   }
 }
 
-function deleteComment(commentId) {
+function deleteComment(commentId, postId) {
   return {
     type: DELETE_COMMENT,
-    payload: commentId
+    payload: {commentId, postId}
   }
 }
 
@@ -57,6 +57,13 @@ function deletePost(postId) {
   }
 }
 
+function updateVotes(postId, votes) {
+  return {
+    type: DELETE_POST,
+    payload: {postId, votes}
+  }
+}
+
 export {
-  gotPost, gotTitles, addPost, editPost, addComment, deleteComment, deletePost
+  gotPost, gotTitles, addPost, editPost, addComment, deleteComment, deletePost, updateVotes
 }
