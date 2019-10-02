@@ -1,0 +1,13 @@
+const ADD = "ADD"
+const EDIT = "EDIT"
+const COMMENT = "COMMENT"
+const DELETE_COMMENT = "DELETE_COMMENT"
+const DELETE_POST = "DELETE_POST"
+
+export {
+  ADD,
+  EDIT,
+  COMMENT,
+  DELETE_COMMENT,
+  DELETE_POST
+}

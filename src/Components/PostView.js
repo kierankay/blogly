@@ -1,5 +1,5 @@
 import React from 'react';
-import NewPostForm from './NewPostForm';
+import NewPostForm from '../NewPostForm';
 
 class PostView extends React.Component {
   constructor(props) {

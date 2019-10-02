@@ -1,5 +1,5 @@
 import React from 'react';
-import HomepageListItem from './HomepageListItem';
+import HomepageListItem from '../HomepageListItem';
 
 class HomepageList extends React.Component {
 
@@ -8,7 +8,7 @@ class HomepageList extends React.Component {
       <div>
         <p>Welcome to Microblog, our innovative site for communicating on the information superhighway.</p>
         <div>
-          {this.props.blogs.map(b => <HomepageListItem url={''} title={''} description={''}/>)}
+          {Object.entries(this.props.posts).map(p => <HomepageListItem url={''} title={''} description={''}/>)}
         </div>
       </div>
     )

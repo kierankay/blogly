@@ -41,7 +41,7 @@ class NewPostForm extends React.Component {
           <label for="body"></label>
           <textarea className="form-control" name="body" id="body" rows="3" value={this.state.body}/>
         </div>
-        <button>Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     )
   }
