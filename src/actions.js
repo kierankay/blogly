@@ -8,16 +8,17 @@ import {
   DELETE_POST
 } from './actionTypes';
 
-function gotPost(postid) {
+function gotPost(post) {
   return {
     type: GOT_POST,
-    payload: postid
+    payload: post
   }
 }
 
-function gotTitles() {
+function gotTitles(titles) {
   return {
-    type: GOT_TITLES
+    type: GOT_TITLES,
+    payload: titles
   }
 }
 

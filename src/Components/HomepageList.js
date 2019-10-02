@@ -11,8 +11,8 @@ class HomepageList extends React.Component {
     return (
       <div>
         <p>Welcome to Microblog, our innovative site for communicating on the information superhighway.</p>
-        <div>
-          {this.props.titles.map(t => <HomepageListItem url={`/posts/${t.id}`} title={t.title} description={t.description}/>)}
+        <div className="row">
+          {this.props.titles.map(t => <HomepageListItem url={t.id} title={t.title} description={t.description}/>)}
         </div>
       </div>
     )

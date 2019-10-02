@@ -8,7 +8,8 @@ import {
   deleteComment, 
   deletePost
 } from '../actions';
-import PostView from '../components/PostView'
+import {getPostFromAPI, deletePostFromAPI} from '../actionCreators';
+import PostView from '../components/PostView';
 
 function mapStateToProps(state) {
   return {
@@ -17,7 +18,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  gotPost, gotTitles, addPost, editPost, addComment, deleteComment, deletePost
+  getPostFromAPI, deletePostFromAPI, gotPost, gotTitles, addPost, editPost, addComment, deleteComment, deletePost
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostView)

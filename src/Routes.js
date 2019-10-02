@@ -1,21 +1,25 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import HomepageListContainer from './containers/HomepageListContainer';
 import Header from './Header';
 import PostViewContainer from './containers/PostViewContainer';
+import PostFormContainer from './containers/PostFormContainer';
 
 class Routes extends React.Component {
 
   render() {
-    // Deal with moving Header
     return (
-      <Switch>
-        <Route path="/" render={<Header />} />
+      <React.Fragment>
+        <Route path="/" render={() => <Header />} />
         <div className="container">
-          <Route exact path="/" render={<HomepageListContainer />} />
-          <Route exact path="/:postId" render={(routeProps) => <PostViewContainer {...routeProps} />} />
+          <Switch>
+            <Route exact path="/" render={() => <HomepageListContainer />} />
+            <Route exact path="/new" render={(routeProps) => <PostFormContainer {...routeProps} editing={false} title="" description="" body="" />} />
+            <Route exact path="/:postId" render={(routeProps) => <PostViewContainer {...routeProps} />} />
+          </Switch>
+          <Redirect to="/" />
         </div>
-      </Switch>
+      </React.Fragment>
     )
   }
 }

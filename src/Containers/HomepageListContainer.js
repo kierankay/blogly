@@ -9,4 +9,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, getTitlesFromAPI)(HomepageList)
+export default connect(mapStateToProps, {getTitlesFromAPI})(HomepageList)

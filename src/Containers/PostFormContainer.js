@@ -4,6 +4,7 @@ import {
   editPost
 } from '../actions';
 import PostForm from '../components/PostForm';
+import {updatePostToAPI, addPostToAPI} from '../actionCreators';
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +13,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  addPost, editPost
+  updatePostToAPI, addPostToAPI, addPost, editPost
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm)

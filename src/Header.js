@@ -5,11 +5,15 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Microblog</h1>
-        <h2>Get in the Rithm of blogging!</h2>
+      <div className="jumbotron">
+        <div className="container">
+        <h1 className="display-4">Microblog</h1>
+        <p className="lead">Get in the Rithm of blogging!</p>
+        <hr className="my-4" />
         <Link to="/">Blog</Link>
+        <span> | </span>
         <Link to="/new">Add a new post</Link>
+        </div>
       </div>
     )
   }

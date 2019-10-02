@@ -19,26 +19,32 @@ class PostForm extends React.Component {
     })
   }
 
-  handleSubmit(evt) {
+  async handleSubmit(evt) {
     evt.preventDefault()
-
+    if (this.state.editing) {
+      await this.props.updatePostToAPI(this.props.id, this.state.title, this.state.description, this.state.body)
+      this.props.updateEdit();
+    } else {
+      await this.props.addPostToAPI(this.state.title, this.state.description, this.state.body)
+      this.props.history.push('/');
+    }
   }
 
   render() {
     return (
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div className="form-group">
-          <label for="title"></label>
+          <label for="title">Title</label>
           <input type="text"
             className="form-control" name="title" id="title" aria-describedby="helpId" placeholder="" value={this.state.title}/>
         </div>
         <div className="form-group">
-          <label for="description"></label>
+          <label for="description">Description</label>
           <input type="text"
             className="form-control" name="description" id="description" aria-describedby="helpId" placeholder="" value={this.state.description}/>
         </div>
         <div className="form-group">
-          <label for="body"></label>
+          <label for="body">Body</label>
           <textarea className="form-control" name="body" id="body" rows="3" value={this.state.body}/>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>

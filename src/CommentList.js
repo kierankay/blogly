@@ -1,11 +1,11 @@
 import React from 'react';
 import Comment from './Comment';
 
-class Posts extends React.Component {
+class CommentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comment: ''
+      comments: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,10 +26,10 @@ class Posts extends React.Component {
       <div>
         <h2>Comments</h2>
         <div>
-          {this.props.comments.map(c => <Comment comment={c}/>)}
+          {/* {this.props.comments.map(c => <Comment comment={c}/>)} */}
         </div>
         <div>
-          <form onChange={this.handleChange} onSubmit={this.handleSubnmit}>
+          <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
             <div class="form-group">
               <label for="comment"></label>
               <input type="text"
@@ -43,4 +43,4 @@ class Posts extends React.Component {
   }
 }
 
-export default Posts;
+export default CommentList;
