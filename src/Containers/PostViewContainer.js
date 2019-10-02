@@ -11,8 +11,10 @@ import {
 import {getPostFromAPI, deletePostFromAPI} from '../actionCreators';
 import PostView from '../components/PostView';
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+
   return {
+    id: ownProps.match.params.id,
     posts: state.posts
   }
 }

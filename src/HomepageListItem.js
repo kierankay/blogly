@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import VotesContainer from './components/Votes';
+import VotesContainer from './containers/VotesContainer';
 
 class HomepageListItem extends React.Component {
 

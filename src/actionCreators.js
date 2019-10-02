@@ -55,7 +55,7 @@ function deleteCommentFromAPI(commentId, postId) {
 function changeVotes(postId, direction) {
   return async function(dispatch) {
     let response = await axios.post(`/api/posts/${postId}/vote/${direction}`);
-    dispatch(updateVotes(postId, response));
+    dispatch(updateVotes(postId, response.data));
   }
 }
 

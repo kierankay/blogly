@@ -57,7 +57,7 @@ function rootReducer(state=INITIAL_STATE, action) {
     case UPDATE_VOTES:
       let updatedPost = [...state.titles]
       let index = updatedPost.findIndex(p => p.id === action.payload.postId)
-      updatedPost[index].votes = action.payload.votes
+      updatedPost[index].votes = action.payload.votes.votes
           return {
             titles: updatedPost,
             posts: state.posts

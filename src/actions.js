@@ -5,7 +5,8 @@ import {
   EDIT_POST,
   ADD_COMMENT,
   DELETE_COMMENT,
-  DELETE_POST
+  DELETE_POST,
+  UPDATE_VOTES
 } from './actionTypes';
 
 function gotPost(post) {
@@ -59,7 +60,7 @@ function deletePost(postId) {
 
 function updateVotes(postId, votes) {
   return {
-    type: DELETE_POST,
+    type: UPDATE_VOTES,
     payload: {postId, votes}
   }
 }
