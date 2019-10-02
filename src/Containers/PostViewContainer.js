@@ -1,12 +1,14 @@
-import { connect } from "redux";
+import { connect } from "react-redux";
 import {
-  add,
-  edit,
-  comment,
-  deleteComment,
+  gotPost, 
+  gotTitles, 
+  addPost, 
+  editPost, 
+  addComment, 
+  deleteComment, 
   deletePost
 } from '../actions';
-import PostView from '../Components/PostView'
+import PostView from '../components/PostView'
 
 function mapStateToProps(state) {
   return {
@@ -15,7 +17,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  add, edit, comment, deleteComment, deletePost
+  gotPost, gotTitles, addPost, editPost, addComment, deleteComment, deletePost
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostView)

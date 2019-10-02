@@ -1,5 +1,5 @@
 import React from 'react';
-import NewPostForm from '../NewPostForm';
+import PostForm from '../containers/PostFormContainer';
 
 class PostView extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class PostView extends React.Component {
       <div>
         <button onClick={this.handleEdit}>Edit</button>
         <button onClick={this.handleDelete}>Delete</button>
-        {this.state.edit ? <NewPostForm editing={true} title={this.props.title} description={this.props.description} body={this.props.body}/> : 
+        {this.state.edit ? <PostForm editing={true} title={this.props.title} description={this.props.description} body={this.props.body}/> : 
         <div>
           <h1>{this.props.title}</h1>
           <h2>{this.props.description}</h2>

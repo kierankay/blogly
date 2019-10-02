@@ -1,6 +1,7 @@
-import {ADD, EDIT, COMMENT, DELETE_COMMENT, DELETE_POST} from './actionTypes';
+import {GOT_TITLES, GOT_POST, ADD_POST, EDIT_POST, ADD_COMMENT, DELETE_COMMENT, DELETE_POST} from './actionTypes';
 
 const INITIAL_STATE = {
+  titles: [],
   posts: {
     postId: {
       title: '',
@@ -13,11 +14,15 @@ const INITIAL_STATE = {
 
 function rootReducer(state=INITIAL_STATE, action) {
   switch (action.type) {
-    case ADD:
+    case GOT_TITLES:
+      return '1'
+    case GOT_POST:
+      return '2'
+    case ADD_POST:
       return 'a'
-    case EDIT:
+    case EDIT_POST:
       return 'b'
-    case COMMENT:
+    case ADD_COMMENT:
       return 'c'
     case DELETE_COMMENT:
       return 'd'

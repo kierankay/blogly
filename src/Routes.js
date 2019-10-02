@@ -7,6 +7,7 @@ import PostViewContainer from './containers/PostViewContainer';
 class Routes extends React.Component {
 
   render() {
+    // Deal with moving Header
     return (
       <Switch>
         <Route path="/" render={<Header />} />
