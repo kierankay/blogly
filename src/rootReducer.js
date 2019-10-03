@@ -22,13 +22,16 @@ function rootReducer(state=INITIAL_STATE, action) {
     case ADD_POST:
       let addedPost = {...state.posts}
       addedPost[action.payload.id] = action.payload
+      addedPost[action.payload.id].comments = [];
       return {
         titles: state.titles,
         posts: addedPost
       }
     case EDIT_POST:
       let editPost = {...state.posts}
+      let oldComments = editPost[action.payload.id].comments
       editPost[action.payload.id] = action.payload
+      editPost[action.payload.id].comments = oldComments
       return {
         titles: state.titles,
         posts: editPost

@@ -1,10 +1,6 @@
 import { connect } from "react-redux";
-import {
-  addPost,
-  editPost
-} from '../actions';
 import PostForm from '../components/PostForm';
-import {updatePostToAPI, addPostToAPI} from '../actionCreators';
+import {updatePostToAPI, addPostToAPI, addPost, editPost} from '../actionCreators';
 
 function mapStateToProps(state) {
   return {

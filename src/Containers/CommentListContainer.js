@@ -1,10 +1,7 @@
 import { connect } from "react-redux";
-import {
-  addComment,
-  deleteComment
-} from '../actions';
-import commentList from "../CommentList";
-import { addCommentToAPI, deleteCommentFromAPI } from '../actionCreators';
+import commentList from "../components/CommentList";
+import { addCommentToAPI, deleteCommentFromAPI, addComment,
+  deleteComment } from '../actionCreators';
 
 function mapStateToProps(state) {
   return {

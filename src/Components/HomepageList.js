@@ -1,5 +1,5 @@
 import React from 'react';
-import HomepageListItem from '../HomepageListItem';
+import HomepageListItem from '../components/HomepageListItem';
 
 class HomepageList extends React.Component {
 

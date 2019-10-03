@@ -1,20 +1,16 @@
 import { connect } from "react-redux";
-import {
-  gotPost, 
+import {getPostFromAPI, deletePostFromAPI, gotPost, 
   gotTitles, 
   addPost, 
   editPost, 
   addComment, 
   deleteComment, 
-  deletePost
-} from '../actions';
-import {getPostFromAPI, deletePostFromAPI} from '../actionCreators';
+  deletePost} from '../actionCreators';
 import PostView from '../components/PostView';
 
 function mapStateToProps(state, ownProps) {
-
   return {
-    id: ownProps.match.params.id,
+    id: parseInt(ownProps.match.params.postId),
     posts: state.posts
   }
 }
